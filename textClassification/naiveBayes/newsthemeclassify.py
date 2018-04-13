@@ -138,7 +138,7 @@ if __name__ == '__main__':
     print "start"
 
     # 文本预处理
-    folder_path = '/Users/wangweida/PycharmProjects/naivebayestextclassify/Database/SogouC/Sample'
+    folder_path = './Database/SogouC/Sample'
     all_words_list, train_data_list, test_data_list, train_class_list, test_class_list = text_processing(folder_path,
                                                                                                          test_size=0.2)
 
