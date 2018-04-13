@@ -2,6 +2,7 @@
 # -*- encoding: utf-8 -*-
 #
 # Author: VidaWhite
+# Source: 某网络课程稍作修改
 # Date: 2018/4/13
 # Description: 朴素贝叶斯做新闻主题分类
 
@@ -13,7 +14,7 @@ from sklearn.naive_bayes import MultinomialNB
 import matplotlib.pyplot as plt
 
 
-# 词统计
+# 制作词包
 def make_word_set(words_file):
     words_set = set()
     with open(words_file, 'r') as fp:
@@ -51,7 +52,7 @@ def text_processing(folder_path, test_size=0.2):
             class_list.append(folder.decode("utf-8")) # 类别
             j += 1
 
-    # 划分训练集和测试集
+    # 手动划分训练集和测试集
     #data_class_list = zip(data_list, class_list)
     #random.shuffle(data_class_list)
     #index = int(len(data_class_list)*test_size) + 1
@@ -72,7 +73,7 @@ def text_processing(folder_path, test_size=0.2):
             else:
                 all_words_dict[word] = 1
 
-    # key函数利用词频降序排序
+    # key 函数利用词频降序排序
     all_words_tuple_list = sorted(all_words_dict.items(), key=lambda f:f[1], reverse=True) #内建函数sorted 参数需为list
     all_words_list = list(zip(*all_words_tuple_list)[0])
     return all_words_list, train_data_list, test_data_list, train_class_list, test_class_list
