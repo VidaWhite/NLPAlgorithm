@@ -1,1 +1,1 @@
-这里实现的所有代码仅为个人学习产物，来源包括但不限于原创、网络公开课、博客。
+Implementations of algorithms from papers. Including but not limited to original, forked, others' blog.
